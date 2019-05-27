@@ -52,3 +52,18 @@ for index, fib_num in zip(range(value), fib()):
 # 7: 13
 # 8: 21
 # 9: 34
+
+#Задание 1.2
+from itertools import islice
+
+def fib(a=0, b=1):
+    yield a
+    while True:
+        yield b
+        a, b = b, a + b
+
+start = int(input("От какого числа просиходит счет \t" ))
+end = int(input("До какого числа просиходит счет \t" ))
+
+fib_num = list(islice(fib(), start, end))
+print(fib_num)
