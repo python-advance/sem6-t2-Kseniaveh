@@ -38,8 +38,8 @@ def fib():
       yield a              # yield 0 => начинаем с нуля
       a, b = b, a + b      # a теперь = 1, b будет также 1, (0 + 1)
     
-for index, fibonacci_number in zip(range(value), fib()):
-    print('{i}: {f}'.format(i=index, f=fibonacci_number))
+for index, fib_num in zip(range(value), fib()):
+    print('{i}: {f}'.format(i=index, f=fib_num))
     
 # ответ при value = 10:
 # 0: 0
