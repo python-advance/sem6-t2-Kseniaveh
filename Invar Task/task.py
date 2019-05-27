@@ -54,6 +54,26 @@ for index, fib_num in zip(range(value), fib()):
 # 9: 34
 
 #Задание 1.2
+def fib_iter(value):
+  """
+  Реализацция по примеру лекции "Оператор for с семантикой итераторов"
+  """
+  lst = [0, 1, ]
+  it = iter(list(range(2, value)))
+  while True:
+    try:
+      elem = next(it)
+    except StopIteration:
+      break
+    n = lst[elem - 1] + lst[elem - 2]
+    lst.append(n)
+  return lst
+
+value = int(input("Введите максимальное целое положительное число \t" ))
+result = fib_iter(value)
+print(result)
+
+#Задание 1.2
 from itertools import islice
 
 def fib(a=0, b=1):
